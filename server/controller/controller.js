@@ -1,4 +1,4 @@
-var Userdb = require('../model/model');
+var Complaintdb = require('../model/model');
 
 // create and save new user
 exports.create = (req,res)=>{
@@ -9,16 +9,21 @@ exports.create = (req,res)=>{
     }
 
     // new user
-    const user = new Userdb({
+    const complaint = new Complaintdb({
+        roll : req.body.roll,
         name : req.body.name,
         email : req.body.email,
+        department : req.body.department,
         gender: req.body.gender,
-        status : req.body.status
+        status : req.body.status,
+        post : req.body.post,
+        subject : req.body.subject,
+        detail : req.body.detail
     })
 
     // save user in the database
-    user
-        .save(user)
+    complaint
+        .save(complaint)
         .then(data => {
             //res.send(data)
             res.redirect('/add-user');
@@ -37,7 +42,7 @@ exports.find = (req, res)=>{
     if(req.query.id){
         const id = req.query.id;
 
-        Userdb.findById(id)
+        Complaintdb.findById(id)
             .then(data =>{
                 if(!data){
                     res.status(404).send({ message : "Not found user with id "+ id})
@@ -50,9 +55,9 @@ exports.find = (req, res)=>{
             })
 
     }else{
-        Userdb.find()
-            .then(user => {
-                res.send(user)
+        Complaintdb.find()
+            .then(complaint => {
+                res.send(complaint)
             })
             .catch(err => {
                 res.status(500).send({ message : err.message || "Error Occurred while retriving user information" })
@@ -71,7 +76,7 @@ exports.update = (req, res)=>{
     }
 
     const id = req.params.id;
-    Userdb.findByIdAndUpdate(id, req.body, { useFindAndModify: false})
+    Complaintdb.findByIdAndUpdate(id, req.body, { useFindAndModify: false})
         .then(data => {
             if(!data){
                 res.status(404).send({ message : `Cannot Update user with ${id}. Maybe user not found!`})
@@ -88,7 +93,7 @@ exports.update = (req, res)=>{
 exports.delete = (req, res)=>{
     const id = req.params.id;
 
-    Userdb.findByIdAndDelete(id)
+    Complaintdb.findByIdAndDelete(id)
         .then(data => {
             if(!data){
                 res.status(404).send({ message : `Cannot Delete with id ${id}. Maybe id is wrong`})
