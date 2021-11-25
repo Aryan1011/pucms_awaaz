@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 var schema = new mongoose.Schema({
     roll : {
         type: String,
-        unique: true
+        unique: true,
+        required : true
     },
     name : {
         type : String,
