@@ -1,15 +1,20 @@
-<% for(var i = 0; i < users.length; i++) { %>
+<% for(var i = 0; i < complaints.length; i++) { %>
 <tr>
     <td><%= i + 1 %></td>
-    <td><%= users[i].name %></td>
-    <td><%= users[i].email %></td>
-    <td><%= users[i].gender %></td>
-    <td><%= users[i].status %></td>
+    <td><%= complaints[i].roll %></td>
+    <td><%= complaints[i].name %></td>
+    <td><%= complaints[i].email %></td>
+    <td><%= complaints[i].department %></td>
+    <td><%= complaints[i].gender %></td>
+    <td><%= complaints[i].status %></td>
+    <td><%= complaints[i].post %></td>
+    <td><%= complaints[i].subject %></td>
+    <td><%= complaints[i].detail %></td>
     <td>
-        <a href="/update-user?id=<%= users[i]._id%>" class="btn border-shadow update">
+        <a href="/update-user?id=<%= complaints[i]._id%>" class="btn border-shadow update">
             <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
         </a>
-        <a class="btn border-shadow delete" data-id=<%= users[i]._id%> >
+        <a class="btn border-shadow delete" data-id=<%= complaints[i]._id%> >
             <span class="text-gradient"><i class="fas fa-times"></i></span>
         </a>
     </td>

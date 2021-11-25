@@ -2,6 +2,11 @@
  <form action="/api/users" method="POST" id="add_user">
     <div class="new_user">
         <div class="form-group">
+            <label for="roll" class="text-light">Roll</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="roll" value="" placeholder="UEXXXXX">
+        </div>
+        <div class="form-group">
             <label for="name" class="text-light">Name</label>
             <input type="hidden" name="id" value="">
             <input type="text" name="name" value="" placeholder="Mark Stoenis">
@@ -9,6 +14,10 @@
         <div class="form-group">
             <label for="Email" class="text-light">Email</label>
             <input type="text" name="email" value="" placeholder="example@gmail.com">
+        </div>
+        <div class="form-group">
+            <label for="department" class="text-light">Department</label>
+            <input type="text" name="department" value="" placeholder="UILS">
         </div>
         <div class="form-group">
             <label for="gender" class="text-light">Gender</label>
@@ -33,6 +42,20 @@
                 <label for="radio-5" class="radio-label">Inactive</label>
             </div>
         </div>
+
+        <div class="form-group">
+            <label for="post" class="text-light">Post</label>
+            <input type="text" name="post" value="" placeholder="dean">
+        </div>
+        <div class="form-group">
+            <label for="subject" class="text-light">Subject</label>
+            <input type="text" name="subject" value="" placeholder="killed">
+        </div>
+        <div class="form-group">
+            <label for="detail" class="text-light">Detail</label>
+            <input type="text" name="detail" value="" placeholder="i was killed">
+        </div>
+
 
         <div class="form-group">
             <button type="submit" class="btn text-dark update">Save</button>

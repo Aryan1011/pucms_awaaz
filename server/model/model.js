@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
+    roll : {
+        type: String,
+        required: true,
+        unique: true
+    },
     name : {
         type : String,
         required: true
@@ -10,10 +15,24 @@ var schema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    department : {
+        type : String
+    },
     gender : String,
-    status : String
+    status : String,
+    post : {
+        type : String
+    },
+    subject : {
+        type : String,
+        required: true
+    },
+    detail : {
+        type : String,
+        required: true
+    }
 })
 
-const Userdb = mongoose.model('userdb', schema);
+const Complaintdb = mongoose.model('complaintdb', schema);
 
-module.exports = Userdb;
+module.exports = Complaintdb;

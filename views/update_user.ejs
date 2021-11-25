@@ -8,7 +8,7 @@
     <div class="container">
         <div class="box-nav d-flex justify-between">
            <div class="filter">
-               <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+               <a href="/"><i class="fas fa-angle-double-left"></i> All Complaints</a>
            </div>
         </div>
         <div class="form-title text-center">
@@ -21,22 +21,31 @@
  <form method="POST" id="update_user">
     <div class="new_user">
         <div class="form-group">
+            <label for="roll" class="text-light">Roll</label>
+            <input type="hidden" name="id" value="<%= complaint._id %>">
+            <input type="text" name="roll" value="<%= complaint.roll %>" placeholder="Mark Stoenis">
+        </div>
+        <div class="form-group">
             <label for="name" class="text-light">Name</label>
-            <input type="hidden" name="id" value="<%= user._id %>">
-            <input type="text" name="name" value="<%= user.name %>" placeholder="Mark Stoenis">
+            <input type="hidden" name="id" value="<%= complaint._id %>">
+            <input type="text" name="name" value="<%= complaint.name %>" placeholder="Mark Stoenis">
         </div>
         <div class="form-group">
             <label for="Email" class="text-light">Email</label>
-            <input type="text" name="email" value="<%= user.email%>" placeholder="example@gmail.com">
+            <input type="text" name="email" value="<%= complaint.email%>" placeholder="example@gmail.com">
+        </div>
+        <div class="form-group">
+            <label for="department" class="text-light">Department</label>
+            <input type="text" name="department" value="<%= complaint.department%>" placeholder="example@gmail.com">
         </div>
         <div class="form-group">
             <label for="gender" class="text-light">Gender</label>
             <div class="radio inline">
-                <input type="radio" id="radio-2" name="gender" value="Male" <%= user.gender == 'Male' ? 'checked' : '' %>>
+                <input type="radio" id="radio-2" name="gender" value="Male" <%= complaint.gender == 'Male' ? 'checked' : '' %>>
                 <label for="radio-2" class="radio-label">Male</label>
             </div>
             <div class="radio inline">
-                <input type="radio" id="radio-3" name="gender" value="Female"  <%= user.gender == 'Female' ? 'checked' : '' %> >
+                <input type="radio" id="radio-3" name="gender" value="Female"  <%= complaint.gender == 'Female' ? 'checked' : '' %> >
                 <label for="radio-3" class="radio-label">Female</label>
             </div>
         </div>
@@ -44,15 +53,26 @@
         <div class="form-group">
             <label for="gender" class="text-light">Status</label>
             <div class="radio inline">
-                <input type="radio" id="radio-4" name="status" value="Active" <%= user.status == 'Active' ? 'checked' : '' %> >
+                <input type="radio" id="radio-4" name="status" value="Active" <%= complaint.status == 'Active' ? 'checked' : '' %> >
                 <label for="radio-4" class="radio-label">Active</label>
             </div>
             <div class="radio inline">
-                <input type="radio" id="radio-5" name="status" value="Inactive" <%= user.status == 'Inactive' ? 'checked' : '' %> >
+                <input type="radio" id="radio-5" name="status" value="Inactive" <%= complaint.status == 'Inactive' ? 'checked' : '' %> >
                 <label for="radio-5" class="radio-label">Inactive</label>
             </div>
         </div>
-
+        <div class="form-group">
+            <label for="post" class="text-light">Post</label>
+            <input type="text" name="post" value="<%= complaint.post%>" placeholder="example@gmail.com">
+        </div>
+        <div class="form-group">
+            <label for="subject" class="text-light">Subject</label>
+            <input type="text" name="subject" value="<%= complaint.subject%>" placeholder="example@gmail.com">
+        </div>
+        <div class="form-group">
+            <label for="detail" class="text-light">Detail</label>
+            <input type="text" name="detail" value="<%= complaint.detail%>" placeholder="example@gmail.com">
+        </div>
         <div class="form-group">
             <button type="submit" class="btn text-dark update">Save</button>
         </div>
