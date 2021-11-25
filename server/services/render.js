@@ -2,8 +2,8 @@ const axios = require('axios');
 
 
 exports.homeRoutes = (req, res) => {
-    // Make a get request to /api/users
-    axios.get('http://localhost:3000/api/users')
+    // Make a get request to /api/complaints
+    axios.get('http://localhost:3000/api/complaints')
         .then(function(response){
             res.render('index', { complaints : response.data });
         })
@@ -14,14 +14,14 @@ exports.homeRoutes = (req, res) => {
     
 }
 
-exports.add_user = (req, res) =>{
-    res.render('add_user');
+exports.add_complaint = (req, res) =>{
+    res.render('add_complaint');
 }
 
-exports.update_user = (req, res) =>{
-    axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
+exports.update_complaint = (req, res) =>{
+    axios.get('http://localhost:3000/api/complaints', { params : { id : req.query.id }})
         .then(function(complaintdata){
-            res.render("update_user", { complaint : complaintdata.data})
+            res.render("update_complaint", { complaint : complaintdata.data})
         })
         .catch(err =>{
             res.send(err);

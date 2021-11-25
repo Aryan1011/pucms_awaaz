@@ -11,7 +11,7 @@
     <td><%= complaints[i].subject %></td>
     <td><%= complaints[i].detail %></td>
     <td>
-        <a href="/update-user?id=<%= complaints[i]._id%>" class="btn border-shadow update">
+        <a href="/update-complaint?id=<%= complaints[i]._id%>" class="btn border-shadow update">
             <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
         </a>
         <a class="btn border-shadow delete" data-id=<%= complaints[i]._id%> >

@@ -11,23 +11,23 @@ const controller = require('../controller/controller');
 route.get('/', services.homeRoutes);
 
 /**
- *  @description add users
- *  @method GET /add-user
+ *  @description add complaints
+ *  @method GET /add-complaint
  */
-route.get('/add-user', services.add_user)
+route.get('/add-complaint', services.add_complaint)
 
 /**
- *  @description for update user
- *  @method GET /update-user
+ *  @description for update complaint
+ *  @method GET /update-complaint
  */
-route.get('/update-user', services.update_user)
+route.get('/update-complaint', services.update_complaint)
 
 
 // API
-route.post('/api/users', controller.create);
-route.get('/api/users', controller.find);
-route.put('/api/users/:id', controller.update);
-route.delete('/api/users/:id', controller.delete);
+route.post('/api/complaints', controller.create);
+route.get('/api/complaints', controller.find);
+route.put('/api/complaints/:id', controller.update);
+route.delete('/api/complaints/:id', controller.delete);
 
 
 module.exports = route

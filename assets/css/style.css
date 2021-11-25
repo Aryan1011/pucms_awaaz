@@ -137,7 +137,7 @@ table{
 
 }
 
-/*  add user & update user template */
+/*  add complaint & update complaint template */
 .form-title{
     margin-top: 2em;
 }
@@ -146,18 +146,18 @@ table{
     padding: .5em 0;
 }
 
-.new_user{
+.new_complaint{
     max-width: 786px;
     margin: auto;
 }
 
-#update_user .form-group,
-#add_user .form-group{
+#update_complaint .form-group,
+#add_complaint .form-group{
     margin: .4em 0;
 }
 
-#update_user .form-group input[type="text"],
-#add_user .form-group input[type="text"]{
+#update_complaint .form-group input[type="text"],
+#add_complaint .form-group input[type="text"]{
     width: 100%;
     padding: .6em 1em;
     margin: .5em 0;
@@ -167,8 +167,8 @@ table{
     border-radius: .2em;
 }
 
-#update_user .form-group .radio,
-#add_user .form-group .radio{
+#update_complaint .form-group .radio,
+#add_complaint .form-group .radio{
     margin: 1em 2em;
 }
 
@@ -212,8 +212,8 @@ table{
     background: #b4b4b4;
 }
 
-#update_user .form-group .btn,
-#add_user .form-group .btn{
+#update_complaint .form-group .btn,
+#add_complaint .form-group .btn{
     width: 100%;
     padding: .9em 1em;
     background-color:#16db93; 
@@ -225,8 +225,8 @@ table{
     margin: .5em 0;
 }
 
-#update_user .form-group .btn:hover,
-#add_user .form-group .btn:hover{
+#update_complaint .form-group .btn:hover,
+#add_complaint .form-group .btn:hover{
     background-color: var(--dark);
     color: var(--border);
 }
