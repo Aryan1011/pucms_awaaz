@@ -11,6 +11,12 @@ const controller = require('../controller/controller');
 route.get('/', services.homeRoutes);
 
 /**
+ *  @description complaint register
+ *  @method GET / complaint
+ */
+route.get('/register', services.register);
+
+/**
  *  @description add complaints
  *  @method GET /add-complaint
  */

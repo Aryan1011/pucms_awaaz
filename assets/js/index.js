@@ -28,7 +28,7 @@ $("#update_complaint").submit(function(event){
 
 })
 
-if(window.location.pathname == "/"){
+if(window.location.pathname == "/register"){
     $ondelete = $(".table tbody td a.delete");
     $ondelete.click(function(){
         var id = $(this).attr("data-id")
@@ -39,6 +39,7 @@ if(window.location.pathname == "/"){
         }
 
         if(confirm("Do you really want to delete this record?")){
+            console.log('here');
             $.ajax(request).done(function(response){
                 alert("Data Deleted Successfully!");
                 location.reload();
