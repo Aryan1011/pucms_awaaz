@@ -66,8 +66,8 @@ a {
 }
 
 #header nav{
-    background-color: #06d6a0;
-    padding: 1em 0;
+    background-color: rgba(255, 193, 7,0.8);
+    padding: 0.2em 0;
     width: 100%;
 }
 
