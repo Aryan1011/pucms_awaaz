@@ -1,6 +1,6 @@
 const express = require('express');
 const route = express.Router()
-
+const { ensureAuth, ensureGuest } = require('../../middleware/auth')
 const services = require('../services/render');
 const controller = require('../controller/controller');
 
@@ -8,13 +8,13 @@ const controller = require('../controller/controller');
  *  @description Root Route
  *  @method GET /
  */
-route.get('/', services.homeRoutes);
+route.get('/', ensureGuest ,services.homeRoutes);
 
 /**
  *  @description complaint register
  *  @method GET / complaint
  */
-route.get('/register', services.register);
+route.get('/register',ensureAuth , services.register);
 
 /**
  *  @description add complaints
